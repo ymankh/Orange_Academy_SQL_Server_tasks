@@ -14,7 +14,7 @@ create table
         salary decimal,
         degree varchar(50),
         teacherId int unique,
-        foreign key (teacherId) REFERENCES teachers (id)
+        foreign key (teacherId) REFERENCES teachers (id) ON DELETE CASCADE
     );
 
 create table
@@ -100,6 +100,8 @@ VALUES
     (3, 1),
     (3, 3);
 
+select * from courses;
+select * from teachers;
 select
     C.name as "Course Name",
     T.name as "Teacher Name",
